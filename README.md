@@ -22,3 +22,5 @@ Milestones to celebrate:
 
 
 So grab a ☕️ and let's get started!
+
+**NOTE: Alpha Version is going to be a simple version. We are not going to functionize all the process. So be patient for Beta version!**
