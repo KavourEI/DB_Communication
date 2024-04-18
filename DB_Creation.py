@@ -3,7 +3,7 @@ import random
 import string
 import pandas as pd
 
-conn = sqlite3.connect('local_database.db')
+conn = sqlite3.connect('local_database.db')    # Create local_database use your imagination for a name of your like
 cursor = conn.cursor()
 
 cursor.execute('''CREATE TABLE IF NOT EXISTS titanic (
@@ -17,7 +17,7 @@ cursor.execute('''CREATE TABLE IF NOT EXISTS titanic (
                     disabilities INTEGER,
                     disabilities_spec TEXT,
                     job TEXT
-                )''')
+                )''')    # Let's create our table. Remember, depending what you have in mind, modify the features included.
 
 for _ in range(100):
     name = ''.join(random.choices(string.ascii_uppercase, k=5))
@@ -34,11 +34,12 @@ for _ in range(100):
                       (name, surname, seat, class, bought_ticket_date, birthdate, disabilities, disabilities_spec, job) 
                       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)''',
                    (name, surname, seat, class_level, bought_ticket_date, birthdate, disabilities, disabilities_spec,
-                    job))
+                    job))    # This will create 100 random values to experiment later. In case you have already data you can skip this part and import your own data so you can work with that!
 conn.commit()
 conn.close()
 
-conn = sqlite3.connect('local_database.db')
+# And of course let us check what we have created! Run the following lines and check your creation, mine looks great!
+conn = sqlite3.connect('local_database.db') 
 cursor = conn.cursor()
 
 cursor.execute("SELECT * FROM titanic")
